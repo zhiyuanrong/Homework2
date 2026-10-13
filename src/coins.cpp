@@ -1,5 +1,23 @@
+#include "coins.hpp"
+#include <istream>
+#include <ostream>
+Coins::Coins(int q, int d, int n, int p)
+    : quarters(q), dimes(d), nickels(n), pennies(p) {
+}
+
+void Coins::deposit_coins(Coins& coins) {
+    quarters += coins.quarters;
+    dimes += coins.dimes;
+    nickels += coins.nickels;
+    pennies += coins.pennies;
+
+    coins.quarters = 0;
+    coins.dimes = 0;
+    coins.nickels = 0;
+    coins.pennies = 0;
+}
 bool Coins:: has_exact_change_for_coins(const Coins& coins) const{
-    if(quarters >= coins.quarter && dimes >= coins.dimes && nickels >= coins.nickels && pennies >= coins.pennies){
+    if(quarters >= coins.quarters && dimes >= coins.dimes && nickels >= coins.nickels && pennies >= coins.pennies){
         return true;
     }else{
         return false;
@@ -28,14 +46,6 @@ int Coins::total_value_in_cents() const{
 void Coins::print(std::ostream& out) const{
     out<<quarters<<"quarters, "<<dimes<<"dimes, "<<nickels<<"nickels, "<<pennies<<"pennies";
 }
-
-bool operator==(const Coins& other) const = default;
-
-private:
-
-int quarters, dimes, nickels, pennies;
-
-};
 
 std::ostream& operator<<(std::ostream& out, const Coins& coins){
     coins.print(out);
