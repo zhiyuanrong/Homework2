@@ -44,7 +44,7 @@ int Coins::total_value_in_cents() const{
 }
 
 void Coins::print(std::ostream& out) const{
-    out<<quarters<<"quarters, "<<dimes<<"dimes, "<<nickels<<"nickels, "<<pennies<<"pennies";
+    out<<quarters<<" quarters, "<<dimes<<" dimes, "<<nickels<<" nickels, "<<pennies<<" pennies";
 }
 
 std::ostream& operator<<(std::ostream& out, const Coins& coins){
