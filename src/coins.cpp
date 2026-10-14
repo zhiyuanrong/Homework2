@@ -105,6 +105,10 @@ void coins_menu(std::istream& in, std::ostream& out){
     int command = 0;
 
     while (command != 4) {
+	out << "1 to deposit\n";
+        out << "2 to extract\n";
+        out << "3 to balance\n";
+        out << "4 to exit\n";
         in >> command;
 
         if (command == 1) {
