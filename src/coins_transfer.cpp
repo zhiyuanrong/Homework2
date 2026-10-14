@@ -13,7 +13,7 @@ int main(){
         Coins transfer = coins_required_for_cents(405);
         Coins moved = piggyBank.extract_exact_change(transfer);
         cout << moved << endl;
-	pocket.deposite_coins(moved)
+	pocket.deposite_coins(moved);
 
         Coins sofa(10, 10, 10, 10);
         piggyBank.deposite_coins(sofa);
