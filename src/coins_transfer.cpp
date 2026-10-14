@@ -16,7 +16,7 @@ int main(){
 	pocket.deposite_coins(moved)
 
         Coins sofa(10, 10, 10, 10);
-        piggyBank.deposit_coins(sofa);
+        piggyBank.deposite_coins(sofa);
         cout << sofa << endl;
         cout << piggyBank << endl;
 
